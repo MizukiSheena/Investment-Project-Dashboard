@@ -1,4 +1,4 @@
-<img width="1111" height="916" alt="image" src="https://github.com/user-attachments/assets/c7543e62-6dfe-4e4c-b223-1b5d3f73e7bf" /># Investment Project Dashboard
+# 投资项目管理面板
 
 一个用于记录、筛选、排序、选择与导出投资交易项目信息的前端面板。支持项目基本信息管理、投资轮次维护、项目时间线（新项目）、文档上传与预览（含 Markdown 渲染与检索）、多格式导出（TXT/JSON/CSV）等。
 
