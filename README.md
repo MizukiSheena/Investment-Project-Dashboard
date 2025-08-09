@@ -1,6 +1,10 @@
-# Investment Project Dashboard
+<img width="1111" height="916" alt="image" src="https://github.com/user-attachments/assets/c7543e62-6dfe-4e4c-b223-1b5d3f73e7bf" /># Investment Project Dashboard
 
 一个用于记录、筛选、排序、选择与导出投资交易项目信息的前端面板。支持项目基本信息管理、投资轮次维护、项目时间线（新项目）、文档上传与预览（含 Markdown 渲染与检索）、多格式导出（TXT/JSON/CSV）等。
+
+试用地址：https://mizukisheena.github.io/Investment-Project-Dashboard/
+界面：<img width="1111" height="916" alt="image" src="https://github.com/user-attachments/assets/cbf5bf6c-bf20-46fe-858b-22f6f1d92e70" />
+
 
 ## 功能特性
 - 项目管理：新增、编辑、删除项目，数据持久化在浏览器 localStorage（键：`investment-projects`）。
