@@ -1,10 +1,13 @@
-# 投资项目管理面板
+# Investment Project Dashboard
+
+[![Pages Deploy Status](https://github.com/MizukiSheena/Investment-Project-Dashboard/actions/workflows/pages.yml/badge.svg)](https://github.com/MizukiSheena/Investment-Project-Dashboard/actions/workflows/pages.yml) [![Made with Vite](https://img.shields.io/badge/build-Vite%205-blueviolet?logo=vite)](https://vitejs.dev/) [![React 18](https://img.shields.io/badge/React-18-61dafb?logo=react&logoColor=white)](https://react.dev/)
 
 一个用于记录、筛选、排序、选择与导出投资交易项目信息的前端面板。支持项目基本信息管理、投资轮次维护、项目时间线（新项目）、文档上传与预览（含 Markdown 渲染与检索）、多格式导出（TXT/JSON/CSV）等。
 
-- 试用地址：https://mizukisheena.github.io/Investment-Project-Dashboard/
-- 界面：<img width="1111" height="916" alt="image" src="https://github.com/user-attachments/assets/cbf5bf6c-bf20-46fe-858b-22f6f1d92e70" />
+## 在线访问
+- 生产（GitHub Pages）：https://mizukisheena.github.io/Investment-Project-Dashboard/
 
+> 若首次访问为 404 或样式异常，请等待 1–3 分钟后刷新。Pages 发布是异步的，静态资源路径已通过 `PUBLIC_PATH=/Investment-Project-Dashboard` 适配仓库子路径。
 
 ## 功能特性
 - 项目管理：新增、编辑、删除项目，数据持久化在浏览器 localStorage（键：`investment-projects`）。
@@ -28,15 +31,14 @@
 ## 目录结构（摘录）
 ```
 src/
-  App.jsx                # 应用入口（Provider、Toaster、Router）
-  main.jsx               # 挂载入口
-  pages/
-    Index.jsx            # 主面板：筛选/排序/选择/列表/新增编辑
+  App.jsx
+  main.jsx
+  pages/Index.jsx
   components/
     ProjectForm.jsx      # 新增/编辑项目表单（含投资轮次、时间线、文档）
     InvestmentRoundForm.jsx
     ProjectList.jsx      # 卡片式项目列表、律师信息、历史兼容等
-    ProjectSearch.jsx    # 筛选面板
+    ProjectSearch.jsx    # 筛选面板（所属部门选项已改为 1/2）
     ProjectSelection.jsx # 批量选择
     DocumentUpload.jsx   # 文档上传
     DocumentViewer.jsx   # 文档查看（Markdown 渲染、搜索）
@@ -47,12 +49,6 @@ src/
     useProjectSort.js    # 排序逻辑
     useExport.js         # 导出逻辑与统计
 ```
-
-## 环境要求
-- Node.js >= 18（建议使用 LTS 版本）
-- npm >= 9 或 pnpm/yarn（任选其一）
-
-> 注意：仓库早期文档中曾示例 Node 16，但当前 Vite 5 需 Node 18+。
 
 ## 快速开始
 ```bash
@@ -71,40 +67,31 @@ npm run preview
 
 访问地址（开发）：`http://localhost:8080/`
 
-## 环境变量（可选）
-项目在 `vite.config.js` 中支持以下变量以控制发布路径：
-- `CHAT_VARIABLE`：用于区分多套构建产物的路径片段
-- `PUBLIC_PATH`：基础公共路径（如托管到子路径）
+## 部署到 GitHub Pages
+本仓库已内置工作流 `.github/workflows/pages.yml`，会在以下任一场景触发部署：
+- 推送到 `main` 分支（push）
+- 在 Actions 页面手动触发（Run workflow）
 
-当 `NODE_ENV=production` 且设置了 `CHAT_VARIABLE` 时：
-- `base` 会变为 `PUBLIC_PATH/CHAT_VARIABLE/`
-- 构建输出目录会是 `build/CHAT_VARIABLE`
+构建要点：
+- 构建时设置环境变量：`PUBLIC_PATH=/Investment-Project-Dashboard`
+- 产物目录：`build/`（工作流会自动打包并上传）
+- 部署状态可在 Actions 中查看，首次部署通常 1–3 分钟生效
 
-## 使用指南
-1. 新增项目：点击“新增项目”，填写项目名称、部门、状态、投资主体等，必要时添加“投资轮次”“新项目时间线”。
-2. 维护投资轮次：在表单中“投资轮次”处添加多轮，分别填写金额、币种、交割日期、持股比例、是否有董事/观察员等。
-3. 文档管理：在“交易文件核心条款”处拖拽或选择上传文件，支持 Markdown 在线预览与关键字搜索。
-4. 筛选与排序：在顶部筛选条按“名称/部门/投资主体”筛选，右侧选择排序字段与方向。
-5. 批量选择与导出：展开“项目选择”，全选/单选后使用“批量导出”选择 TXT/JSON/CSV。
-6. 单项目导出：项目卡片右上角“导出”下拉选择 TXT 或 JSON。
+手动触发步骤：
+1. 打开仓库的 Actions → 选择 “Deploy to GitHub Pages” 工作流
+2. 点击 “Run workflow”，选择 `main` 分支并运行
+3. 运行完成后，访问链接见上方“在线访问”
 
-## 数据持久化
-- 所有项目数据存储于浏览器 `localStorage`，键：`investment-projects`。
-- 清除浏览器缓存或更换浏览器/设备会导致数据不同步；如需备份请使用导出功能。
+## 截图
+> 可将截图放入 `docs/` 目录，并在此处引用。例如：
 
-## 部署
-- 运行 `npm run build` 生成静态文件至 `build/`（或 `build/CHAT_VARIABLE`）。
-- 将 `build/` 目录部署到任意静态托管（如 GitHub Pages、Vercel、Netlify、Nginx）。
-- 若托管在子路径，请正确设置 `PUBLIC_PATH` 与（可选）`CHAT_VARIABLE`。
+![主界面](docs/screenshot-main.png)
+
+如果暂时没有截图，该模块不会影响使用。
 
 ## 常见问题
-- 看不到数据？确认未清空浏览器存储；或从导出的 JSON 导入（当前暂未提供导入 UI，可手动写脚本写回 localStorage）。
-- 文档不展示样式？Markdown 渲染依赖浏览器端样式，确保未被 CSP 或扩展拦截。
-- 端口被占用？将 `vite.config.js` 的 `server.port` 改为其他端口，或通过命令行 `PORT=xxxx npm run dev`（不同系统设置方式不同）。
+- 页面 404 或资源 404：确认 Pages 发布已完成；或稍等后刷新。若托管在子路径，请确保 `PUBLIC_PATH` 与仓库名一致。
+- 构建失败提示锁文件缺失：可改用 `npm install`；或提交 `package-lock.json` 后使用 `npm ci`。
 
 ## 许可（License）
-- 本仓库暂未明确开源许可。如需对外开源，建议新增 `LICENSE` 文件（如 MIT）。
-
----
-
-如有问题或建议，欢迎提交 Issue 或 PR。
+暂未明确开源许可。如需对外开源，建议新增 `LICENSE` 文件（如 MIT）。
