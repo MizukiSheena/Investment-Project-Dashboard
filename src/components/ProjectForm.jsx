@@ -123,8 +123,8 @@ const ProjectForm = ({ project, onSubmit, onCancel }) => {
                   <SelectValue placeholder="选择部门" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="龙珠">龙珠</SelectItem>
-                  <SelectItem value="战投">战投</SelectItem>
+                  <SelectItem value="1">1</SelectItem>
+                  <SelectItem value="2">2</SelectItem>
                 </SelectContent>
               </Select>
             </div>
