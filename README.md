@@ -83,15 +83,13 @@ npm run preview
 3. 运行完成后，访问链接见上方“在线访问”
 
 ## 截图
-> 可将截图放入 `docs/` 目录，并在此处引用。例如：
 
-![主界面](docs/screenshot-main.png)
-
-如果暂时没有截图，该模块不会影响使用。
+<img width="1058" height="280" alt="image" src="https://github.com/user-attachments/assets/fc1afc81-21aa-408f-a1c6-3828a9c6186b" />
+<img width="1024" height="913" alt="image" src="https://github.com/user-attachments/assets/d04d9149-b0b0-4d3a-8540-43b2d500378b" />
 
 ## 常见问题
 - 页面 404 或资源 404：确认 Pages 发布已完成；或稍等后刷新。若托管在子路径，请确保 `PUBLIC_PATH` 与仓库名一致。
 - 构建失败提示锁文件缺失：可改用 `npm install`；或提交 `package-lock.json` 后使用 `npm ci`。
 
 ## 许可（License）
-暂未明确开源许可。如需对外开源，建议新增 `LICENSE` 文件（如 MIT）。
+MIT
