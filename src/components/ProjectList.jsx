@@ -21,9 +21,9 @@ const ProjectList = ({ projects, onEdit, onDelete }) => {
 
   const getDepartmentColor = (department) => {
     switch (department) {
-      case '龙珠':
+      case '1':
         return 'bg-orange-50 text-orange-700 border-orange-200';
-      case '战投':
+      case '2':
         return 'bg-indigo-50 text-indigo-700 border-indigo-200';
       default:
         return 'bg-gray-50 text-gray-700 border-gray-200';
