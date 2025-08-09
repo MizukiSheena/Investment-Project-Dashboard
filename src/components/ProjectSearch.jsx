@@ -84,8 +84,8 @@ const ProjectSearch = ({ filters, onFiltersChange }) => {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">全部部门</SelectItem>
-                    <SelectItem value="龙珠">龙珠</SelectItem>
-                    <SelectItem value="战投">战投</SelectItem>
+                    <SelectItem value="1">1</SelectItem>
+                    <SelectItem value="2">2</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
